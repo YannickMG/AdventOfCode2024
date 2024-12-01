@@ -1,30 +1,20 @@
 package com.yannickmg.adventofcode2024.puzzles;
 
+import com.yannickmg.adventofcode2024.Puzzle;
+
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class DayOnePuzzleOne {
+public class DayOnePuzzleOne implements Puzzle {
 
-    public static void main(String[] args) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader( DayOnePuzzleOne.class.getResourceAsStream("/inputs/day1-puzzle1.txt")))) {
-            DayOnePuzzleOne puzzle = new DayOnePuzzleOne(reader);
-            System.out.println(puzzle.solve());
-        }
-    }
-
-    private final BufferedReader input;
     private final List<Integer> leftList = new ArrayList<>();
     private final List<Integer> rightList = new ArrayList<>();
 
-    public DayOnePuzzleOne(BufferedReader input) {
-        this.input = input;
-    }
-
-    private String solve() throws IOException {
+    @Override
+    public String solve(BufferedReader input) throws IOException {
         buildLists(input);
         leftList.sort(Integer::compareTo);
         rightList.sort(Integer::compareTo);
