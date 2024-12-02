@@ -2,6 +2,7 @@ package com.yannickmg.adventofcode2024;
 
 import com.yannickmg.adventofcode2024.puzzles.DayOnePuzzleOne;
 import com.yannickmg.adventofcode2024.puzzles.DayOnePuzzleTwo;
+import com.yannickmg.adventofcode2024.puzzles.DayTwoPuzzleOne;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,8 +12,9 @@ import java.util.Optional;
 
 public class PuzzleLauncher {
 
-    private static Map<Integer, Map<Integer, Puzzle>> puzzles = Map.of(
-            1, Map.of(1, new DayOnePuzzleOne(), 2, new DayOnePuzzleTwo())
+    private static final Map<Integer, Map<Integer, Puzzle>> puzzles = Map.of(
+            1, Map.of(1, new DayOnePuzzleOne(), 2, new DayOnePuzzleTwo()),
+            2, Map.of(1, new DayTwoPuzzleOne())
     );
 
     public static void main(String[] args) throws IOException {
