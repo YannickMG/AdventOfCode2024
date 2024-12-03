@@ -12,7 +12,8 @@ public class PuzzleLauncher {
 
     private static final Map<Integer, Map<Integer, Puzzle>> puzzles = Map.of(
             1, Map.of(1, new DayOnePuzzleOne(), 2, new DayOnePuzzleTwo()),
-            2, Map.of(1, new DayTwoPuzzleOne(), 2, new DayTwoPuzzleTwo())
+            2, Map.of(1, new DayTwoPuzzleOne(), 2, new DayTwoPuzzleTwo()),
+            3, Map.of(1, new DayThreePuzzleOne())
     );
 
     public static void main(String[] args) throws IOException {
