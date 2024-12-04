@@ -11,6 +11,11 @@ import java.util.stream.Collectors;
 
 public class DayThreePuzzleTwo implements Puzzle {
 
+    private static final int DO_GROUP = 1;
+    private static final int DONT_GROUP = 2;
+    private static final int A_OPERAND_GROUP = 4;
+    private static final int B_OPERAND_GROUP = 5;
+
     @Override
     public String solve(BufferedReader input) throws IOException {
         StringBuilder instructions = new StringBuilder();
@@ -24,13 +29,13 @@ public class DayThreePuzzleTwo implements Puzzle {
         long sum = 0;
         boolean shouldSum = true;
         while (matcher.find()) {
-            if (Objects.nonNull(matcher.group(1))) {
+            if (Objects.nonNull(matcher.group(DO_GROUP))) {
                 shouldSum = true;
-            } else if (Objects.nonNull(matcher.group(2))) {
+            } else if (Objects.nonNull(matcher.group(DONT_GROUP))) {
                 shouldSum = false;
             } else if (shouldSum){
-                long a = Long.parseLong(matcher.group(4));
-                long b = Long.parseLong(matcher.group(5));
+                long a = Long.parseLong(matcher.group(A_OPERAND_GROUP));
+                long b = Long.parseLong(matcher.group(B_OPERAND_GROUP));
                 sum += a * b;
             }
         }
