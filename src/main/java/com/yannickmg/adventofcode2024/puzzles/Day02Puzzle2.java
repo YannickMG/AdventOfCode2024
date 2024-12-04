@@ -10,7 +10,7 @@ import java.util.function.Predicate;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class DayTwoPuzzleTwo implements Puzzle {
+public class Day02Puzzle2 implements Puzzle {
 
     @Override
     public String solve(BufferedReader input) throws IOException {

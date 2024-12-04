@@ -6,14 +6,14 @@ import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class DayOnePuzzleOneTest {
+class Day01Puzzle2Test {
 
     PuzzleTestRunner runner = new PuzzleTestRunner();
 
     @Test
     void solve() throws IOException {
-        runner.runPuzzleTest("day1-puzzle1", (input, expectedAnswer)-> {
-            assertThat(new DayOnePuzzleOne().solve(input)).isEqualTo(expectedAnswer);
+        runner.runPuzzleTest("day1-puzzle2", (input, expectedAnswer)-> {
+            assertThat(new Day01Puzzle2().solve(input)).isEqualTo(expectedAnswer);
         });
     }
 }

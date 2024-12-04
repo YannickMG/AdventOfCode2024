@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class DayOnePuzzleTwo implements Puzzle {
+public class Day01Puzzle2 implements Puzzle {
     @Override
     public String solve(BufferedReader input) throws IOException {
         LeftRightLists lists = new LeftRightLists();

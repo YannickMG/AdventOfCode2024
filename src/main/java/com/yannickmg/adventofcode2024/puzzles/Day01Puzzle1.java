@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class DayOnePuzzleOne implements Puzzle {
+public class Day01Puzzle1 implements Puzzle {
 
     @Override
     public String solve(BufferedReader input) throws IOException {

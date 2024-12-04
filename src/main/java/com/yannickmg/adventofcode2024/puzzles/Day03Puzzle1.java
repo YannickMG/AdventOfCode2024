@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.regex.Pattern;
 
-public class DayThreePuzzleOne implements Puzzle {
+public class Day03Puzzle1 implements Puzzle {
 
     @Override
     public String solve(BufferedReader input) throws IOException {

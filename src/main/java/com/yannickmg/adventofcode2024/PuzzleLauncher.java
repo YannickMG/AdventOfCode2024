@@ -5,15 +5,14 @@ import com.yannickmg.adventofcode2024.puzzles.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Map;
-import java.util.Optional;
+import java.util.List;
 
 public class PuzzleLauncher {
 
-    private static final Map<Integer, Map<Integer, Puzzle>> puzzles = Map.of(
-            1, Map.of(1, new DayOnePuzzleOne(), 2, new DayOnePuzzleTwo()),
-            2, Map.of(1, new DayTwoPuzzleOne(), 2, new DayTwoPuzzleTwo()),
-            3, Map.of(1, new DayThreePuzzleOne(), 2, new DayThreePuzzleTwo())
+    private static final List<List<Puzzle>> puzzles = List.of(
+            List.of(new Day01Puzzle1(), new Day01Puzzle2()),
+            List.of(new Day02Puzzle1(), new Day02Puzzle2()),
+            List.of(new Day03Puzzle1(), new Day03Puzzle2())
     );
 
     public static void main(String[] args) throws IOException {
@@ -25,23 +24,17 @@ public class PuzzleLauncher {
             int day = Integer.parseInt(args[0]);
             int puzzleNumber = Integer.parseInt(args[1]);
             String input = "/inputs/day" + day + "-puzzle" + puzzleNumber + ".txt";
-            Puzzle puzzle = getPuzzle(day, puzzleNumber);
-            if (puzzle != null) {
-                try (BufferedReader reader = new BufferedReader(new InputStreamReader( PuzzleLauncher.class.getResourceAsStream(input)))) {
-                    System.out.println(puzzle.solve(reader));
-                }
-            } else {
-                System.out.println("Invalid puzzle identifier.");
-                System.exit(1);
+            Puzzle puzzle = puzzles.get(day - 1).get(puzzleNumber - 1);
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader( PuzzleLauncher.class.getResourceAsStream(input)))) {
+                System.out.println(puzzle.solve(reader));
             }
-
         } catch (NumberFormatException e) {
             printUsage();
+            System.exit(1);
+        } catch (ArrayIndexOutOfBoundsException e ) {
+            System.out.println("Invalid puzzle identifier.");
+            System.exit(1);
         }
-    }
-
-    private static Puzzle getPuzzle(int day, int puzzle) {
-        return Optional.ofNullable(puzzles.get(day)).map(dayPuzzles -> dayPuzzles.get(puzzle)).orElse(null);
     }
 
     private static void printUsage() {

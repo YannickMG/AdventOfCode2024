@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.function.Predicate;
 
-public class DayTwoPuzzleOne implements Puzzle {
+public class Day02Puzzle1 implements Puzzle {
 
     @Override
     public String solve(BufferedReader input) throws IOException {

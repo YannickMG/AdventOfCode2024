@@ -7,9 +7,8 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
-public class DayThreePuzzleTwo implements Puzzle {
+public class Day03Puzzle2 implements Puzzle {
 
     private static final int DO_GROUP = 1;
     private static final int DONT_GROUP = 2;
