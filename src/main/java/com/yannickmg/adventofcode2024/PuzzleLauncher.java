@@ -12,7 +12,8 @@ public class PuzzleLauncher {
     private static final List<List<Puzzle>> puzzles = List.of(
             List.of(new Day01Puzzle1(), new Day01Puzzle2()),
             List.of(new Day02Puzzle1(), new Day02Puzzle2()),
-            List.of(new Day03Puzzle1(), new Day03Puzzle2())
+            List.of(new Day03Puzzle1(), new Day03Puzzle2()),
+            List.of(new Day04Puzzle1())
     );
 
     public static void main(String[] args) throws IOException {
